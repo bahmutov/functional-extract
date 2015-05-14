@@ -2,26 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>functional-pipeline</title>
-    <script src="fp.js"></script>
+    <title>functional-extract</title>
+    <script src="fe.js"></script>
+    <script src="node_modules/functional-pipeline/fp.js"></script>
   </head>
   <body>
-    <h1>functional-pipeline</h1>
+    <h1>functional-extract</h1>
     <script>
-    (function (fp) {
-      if (typeof fp === 'undefined') {
-        throw new Error('Cannot find fp object');
+    (function (fe) {
+      if (typeof fe === 'undefined') {
+        throw new Error('Cannot find fe object');
       }
-      console.log('Found fp object');
-      function triple(x) { return 3 * x; }
-      function add2(x) { return x + 2; }
-      var data = {
-        age: 10,
-        getAge: function () { return this.age; }
+      console.log('Found fe object');
+      var joe = {
+        name: {
+          first: 'joe',
+          last: 'smith'
+        },
+        age: 20
       };
-      var pipeline = fp('getAge', triple, add2);
-      var result = pipeline(data);
-      if (result !== 32) {
+      var simple = {
+        name: fp('name', 'first'),
+        age: 20,
+        gender: 'male'
+      };
+      var result = fe(simple, joe);
+      if (result.name !== 'joe' ||
+        result.age !== 20 ||
+        result.gender !== 'male') {
         throw new Error('invalid result ' + result);
       }
     }(window.fp));

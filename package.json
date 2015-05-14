@@ -6,6 +6,7 @@
   "bugs": {
     "url": "https://github.com/bahmutov/functional-extract/issues"
   },
+  "contributors": [],
   "dependencies": {},
   "devDependencies": {
     "coveralls": "2.11.2",
@@ -48,7 +49,7 @@
     "browser"
   ],
   "license": "MIT",
-  "main": "fp.js",
+  "main": "fe.js",
   "pre-commit": [
     "npm test",
     "npm version"

@@ -1,8 +1,8 @@
 {
-  "name": "functional-pipeline",
+  "name": "functional-extract",
   "main": "fp.js",
-  "version": "0.2.4",
-  "homepage": "https://github.com/bahmutov/functional-pipeline",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bahmutov/functional-extract",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -15,14 +15,17 @@
     "index.html",
     "karma.conf.js"
   ],
-  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "keywords": [
-    "pipeline",
+    "extract",
     "helpers",
     "utility",
     "functional",
     "callbacks",
     "node",
     "browser"
-  ]
+  ],
+  "authors": [
+    "Gleb Bahmutov <gleb.bahmutov@gmail.com>"
+  ],
+  "description": "Quickly extracts property values nested deep inside an object."
 }
