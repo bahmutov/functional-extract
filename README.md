@@ -48,6 +48,8 @@ var simple = {
   age: fp('age'),
   gender: 'male'
 };
+// simple is an object
+// { name: [Function], age: [Function], gender: 'male' }
 var result = fe(simple, joe);
 // result is
 // { name: 'joe', age: 20, gender: 'male' }
@@ -70,6 +72,8 @@ var result = fe(simple, joe);
 // result is
 // { name: 'joe', age: 20 }
 ```
+
+For more examples, see my blog post [Deep picking](http://glebbahmutov.com/blog/deep-picking/)
 
 ### Small print
 
