@@ -9,7 +9,7 @@
   <body>
     <h1>functional-extract</h1>
     <script>
-    (function (fe) {
+    (function testFunctionalExtract(fe) {
       if (typeof fe === 'undefined') {
         throw new Error('Cannot find fe object');
       }
@@ -32,7 +32,7 @@
         result.gender !== 'male') {
         throw new Error('invalid result ' + result);
       }
-    }(window.fp));
+    }(window.fe));
     </script>
   </body>
 </html>
