@@ -45,7 +45,7 @@ var fp = require('functional-pipeline');
 var fe = require('functional-extract');
 var simple = {
   name: fp('name', 'first'),
-  age: 20,
+  age: fp('age'),
   gender: 'male'
 };
 var result = fe(simple, joe);

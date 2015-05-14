@@ -14,13 +14,12 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/d3/d3.js',
       // adds function.bind support to PhantomJs
       'node_modules/es5-shim/es5-shim.js',
-      'node_modules/expect.js/index.js',
-      'fp.js',
-      'test/fp-spec.js',
-      'test/misc-spec.js'
+      'node_modules/lazy-ass/index.js',
+      'node_modules/functional-pipeline/fp.js',
+      'fe.js',
+      'test/fe-spec.js'
     ],
 
 
