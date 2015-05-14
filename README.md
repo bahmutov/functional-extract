@@ -40,7 +40,7 @@ var joe = {
 Using `functional-extract` and [functional-pipeline](https://github.com/bahmutov/functional-pipeline)
 we can do this quickly 
 
-```
+```js
 var fp = require('functional-pipeline');
 var fe = require('functional-extract');
 var simple = {
@@ -51,6 +51,24 @@ var simple = {
 var result = fe(simple, joe);
 // result is
 // { name: 'joe', age: 20, gender: 'male' }
+```
+
+You can use other libraries to extract a property from an object, for example [lodash/get][lodash/get],
+as long as it returns an object that will receive the actual object reference.
+
+```js
+function _get(path) {
+  return function (obj) {
+    return _.get(obj, path);
+  };
+}
+var simple = {
+  name: _get('name.first'),
+  age: _get('age')
+};
+var result = fe(simple, joe);
+// result is
+// { name: 'joe', age: 20 }
 ```
 
 ### Small print
@@ -101,3 +119,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 [functional-extract-dependencies-url]: https://david-dm.org/bahmutov/functional-extract
 [functional-extract-devdependencies-image]: https://david-dm.org/bahmutov/functional-extract/dev-status.png
 [functional-extract-devdependencies-url]: https://david-dm.org/bahmutov/functional-extract#info=devDependencies
+[lodash/get]: https://lodash.com/docs#get

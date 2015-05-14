@@ -18,6 +18,7 @@ module.exports = function (config) {
       'node_modules/es5-shim/es5-shim.js',
       'node_modules/lazy-ass/index.js',
       'node_modules/functional-pipeline/fp.js',
+      'node_modules/lodash/index.js',
       'fe.js',
       'test/fe-spec.js'
     ],
