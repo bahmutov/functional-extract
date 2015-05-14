@@ -1,0 +1,28 @@
+{
+  "name": "functional-pipeline",
+  "main": "fp.js",
+  "version": "0.2.4",
+  "homepage": "https://github.com/bahmutov/functional-pipeline",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js",
+    "package.json",
+    "index.html",
+    "karma.conf.js"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "keywords": [
+    "pipeline",
+    "helpers",
+    "utility",
+    "functional",
+    "callbacks",
+    "node",
+    "browser"
+  ]
+}
