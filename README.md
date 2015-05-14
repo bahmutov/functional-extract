@@ -2,10 +2,6 @@
 
 > Quickly extracts property values nested deep inside an object.
 
-It is like [_.invoke](http://lodash.com/docs#invoke) + [_.pluck](http://lodash.com/docs#pluck) +
-[_.compose](http://lodash.com/docs#compose) all rolled into single function.
-
-
 [![NPM][functional-extract-icon] ][functional-extract-url]
 
 [![Build status][functional-extract-ci-image] ][functional-extract-ci-url]
@@ -29,7 +25,7 @@ bower install functional-extract
 
 ## Example
 
-Assuming this common code:
+Imagine we need to extract first name, age and give a default gender value for the following object:
 
 ```js
 var joe = {
@@ -39,6 +35,14 @@ var joe = {
   },
   age: 20
 };
+```
+
+Using `functional-extract` and [functional-pipeline](https://github.com/bahmutov/functional-pipeline)
+we can do this quickly 
+
+```
+var fp = require('functional-pipeline');
+var fe = require('functional-extract');
 var simple = {
   name: fp('name', 'first'),
   age: 20,
