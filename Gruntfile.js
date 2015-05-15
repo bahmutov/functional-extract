@@ -2,8 +2,9 @@
 module.exports = function (grunt) {
   module.require('time-grunt')(grunt);
 
+  var pkg = grunt.file.readJSON('package.json');
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: pkg,
 
     'nice-package': {
       all: {
@@ -65,17 +66,28 @@ module.exports = function (grunt) {
       },
       all: {
         files: ['*.js', 'test/*.js', 'index.html'],
-        tasks: ['jshint', 'umd_wrapper', 'test']
+        tasks: ['git-rev-parse', 'umd_wrapper', 'jshint', 'test']
       }
     },
 
     umd_wrapper: {
       options: {
-        template: 'umd-template.js'
+        template: 'umd-template.js',
+        version: pkg.version,
+        gitrev: '<%= grunt.config.get("git-revision") %>'
       },
       all: {
         files: {
           'fe.js': 'index.js'
+        }
+      }
+    },
+
+    'git-rev-parse': {
+      build: {
+        options: {
+          prop: 'git-revision',
+          number: 6
         }
       }
     }
@@ -85,5 +97,5 @@ module.exports = function (grunt) {
   plugins.forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('test', ['mochaTest', 'karma', 'clean-console']);
-  grunt.registerTask('default', ['deps-ok', 'nice-package', 'sync', 'jshint', 'umd_wrapper', 'test']);
+  grunt.registerTask('default', ['deps-ok', 'git-rev-parse', 'nice-package', 'sync', 'umd_wrapper', 'jshint', 'test']);
 };
