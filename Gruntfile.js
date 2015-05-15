@@ -73,8 +73,7 @@ module.exports = function (grunt) {
     umd_wrapper: {
       options: {
         template: 'umd-template.js',
-        version: pkg.version,
-        gitrev: '<%= grunt.config.get("git-revision") %>'
+        version: pkg.version
       },
       all: {
         files: {

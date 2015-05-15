@@ -19,7 +19,7 @@
   if (typeof m.exports === 'object' ||
     typeof m.exports === 'function') {
     m.exports.VERSION = '0.3.0';
-    m.exports.GITREV = '4bb995';
+    m.exports.GITREV = '';
   }
 }(this, function(module) {
   
