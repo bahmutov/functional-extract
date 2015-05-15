@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc'
       },
       default: {
-        'src': [ '*.js', 'test/*.js' ]
+        'src': [ '*.js', 'test/*.js', '!umd-template.js' ]
       }
     },
 
@@ -65,7 +65,18 @@ module.exports = function (grunt) {
       },
       all: {
         files: ['*.js', 'test/*.js', 'index.html'],
-        tasks: ['jshint', 'test']
+        tasks: ['jshint', 'umd_wrapper', 'test']
+      }
+    },
+
+    umd_wrapper: {
+      options: {
+        template: 'umd-template.js'
+      },
+      all: {
+        files: {
+          'fe.js': 'index.js'
+        }
       }
     }
   });
@@ -74,5 +85,5 @@ module.exports = function (grunt) {
   plugins.forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('test', ['mochaTest', 'karma', 'clean-console']);
-  grunt.registerTask('default', ['deps-ok', 'nice-package', 'sync', 'jshint', 'test']);
+  grunt.registerTask('default', ['deps-ok', 'nice-package', 'sync', 'jshint', 'umd_wrapper', 'test']);
 };

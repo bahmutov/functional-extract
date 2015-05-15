@@ -1,13 +1,13 @@
 // @generated
-(function (root, factory) {
+(function (%ROOT%, factory) {
   /* global define */
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([], factory);
+    define([%AMD_REQUIRES%], factory);
   }
   if (typeof global === 'object') {
     // Node, assumes that the factory exports something
-    
+    %CJS_REQUIRES%
     factory(module);
   }
   /* global window */
@@ -20,19 +20,5 @@
     window.fe = m.exports;
   }
 }(this, function(module) {
-  
-function extract(picks, from) {
-  var result = {};
-  Object.keys(picks).forEach(function (key) {
-    if (typeof picks[key] === 'function') {
-      result[key] = picks[key](from);
-    } else {
-      result[key] = picks[key]; // A
-    }
-  });
-  return result;
-}
-
-module.exports = extract;
-
+  %SRC%
 }));

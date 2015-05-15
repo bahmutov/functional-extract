@@ -1,6 +1,6 @@
 /* global la */
 if (typeof fe === 'undefined') {
-  var fe = require('..');
+  var fe = require('../index');
 }
 if (typeof fp === 'undefined') {
   var fp = require('functional-pipeline');
